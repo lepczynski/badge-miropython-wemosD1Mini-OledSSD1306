@@ -24,7 +24,7 @@ H = HEIGHT -1
 
 
 bc_text = []
-bc_off = [4, 8, 4]
+bc_off = []
 
 
 def loadBusinessCard():
