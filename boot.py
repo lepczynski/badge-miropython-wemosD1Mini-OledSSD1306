@@ -22,8 +22,8 @@ def do_connect():
 
         sta_if.active(True)
 
-        print('loading config_wifi.txt ...')
-        config_wifi_carrets = open('config_wifi.txt', 'r').readlines()
+        print('loading wifi config file [properties.wifi.txt]...')
+        config_wifi_carrets = open('properties.wifi.txt', 'r').readlines()
         config_wifi = [ x.rstrip() for x in config_wifi_carrets ]
 
         sta_if.connect(config_wifi[0], config_wifi[1])
