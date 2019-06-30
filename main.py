@@ -58,7 +58,7 @@ class BusinessCard(object):
         print('business card item lengths: ', self.bc_off)
         
         self.bc_off = [ m.ceil( 8 -(x/2) ) for x in self.bc_off]
-        print('business card item offsets in number of chars: ', bc_off)
+        print('business card item offsets in number of chars: ', self.bc_off)
         
         #transforms the list of indent numbers for center allignment into space string of such lengths
         self.bc_off = [ ( "".join(map(str, [ " " for i in range(x) ] )) ) for x in self.bc_off ]
@@ -103,11 +103,11 @@ class BusinessCard(object):
             now = utime.ticks_ms()
 
             if utime.ticks_diff(now, corners_last) > corners_interval_off and not time4on:
-                drawCorners(1)
+                self.drawCorners(1)
                 time4on = True
             if utime.ticks_diff(now, corners_last) > corners_interval_off + corners_interval_on:
-                drawCorners(0)
-                drawBusinessCard()
+                self.drawCorners(0)
+                self.drawBusinessCard()
                 corners_last = now
                 time4on = False
 
@@ -116,7 +116,7 @@ class BusinessCard(object):
 
             print(utime.ticks_diff(now, ants_loop))
 
-            drawBusinessCard()
+            self.drawBusinessCard()
             oled.show()
 
 
