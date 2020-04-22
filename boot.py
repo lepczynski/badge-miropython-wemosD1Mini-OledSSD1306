@@ -23,6 +23,7 @@ def do_connect():
         sta_if.active(True)
 
         print('loading wifi config file [properties.wifi.txt]...')
+        # chenge broadcast name to "lepi-badge" or from properties actually
         config_wifi_carrets = open('properties.wifi.txt', 'r').readlines()
         config_wifi = [ x.rstrip() for x in config_wifi_carrets ]
 
@@ -45,6 +46,6 @@ except:
 
 import webrepl
 
-print('starting WebREPL...')
+print('Loading SHODAN...')
 webrepl.start()
 gc.collect()
